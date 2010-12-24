@@ -1,0 +1,16 @@
+{
+  "name":		"Moly-figyelő",
+  "version":		"1.0",
+  "description":	"Moly-figyelő, Chrome verzió",
+ 
+  "background_page":	"background.html",
+ 
+  "browser_action": {
+    "default_icon":	"favicon.ico"
+  },
+
+  "permissions": [
+  	"tabs",
+        "http://moly.hu"
+  ]
+}

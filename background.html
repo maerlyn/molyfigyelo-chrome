@@ -1,0 +1,17 @@
+<html>
+<head>
+<script type="text/javascript">
+
+  var i = 0;
+  chrome.browserAction.setBadgeBackgroundColor({color:[255, 0, 0, 100]});
+
+  function clicked() {
+    chrome.browserAction.setBadgeText({text:String(++i)});
+    chrome.browserAction.setTitle({title: "asdasd\nqweqwe"});
+  }
+  
+  chrome.browserAction.onClicked.addListener(clicked);
+
+</script>
+</head>
+</html>
