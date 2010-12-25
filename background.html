@@ -13,31 +13,7 @@
   var urlItems = "http://moly.hu/api/fresh_counter_by_type_for_current_user";
   var urlMessages = "http://moly.hu/api/wave_notes_counter_for_current_user";
   
-  var itemTypes = { 
-          "Advertisement": "Ajánló",
-          "BadgeOwnership": "Kitüntetés",
-          "Book": "Könyv", 
-          "Citation": "Idézet", 
-          "Comment": "Molyos blogbejegyzéshez hozzászólás",
-          "Cover": "Borító", 
-          "Description": "Fülszöveg",
-          "Entry": "Blog", 
-          "Event": "Esemény",
-          "Follow": "Figyelés",
-          "Lend": "Kölcsönkérés",
-          "Link": "Link",
-          "LoveLetter": "Szerelmeslevél",
-          "Post": "Molyos blogbejegyzés",
-          "Recommendation": "Ajánlás",
-          "Reading": "Olvasás", 
-          "Report": "Hír",
-          "Share": "Megosztás",
-          "Sight": "Észlelés",
-          "Statement": "Karc", 
-          "Tale": "Polc", 
-          "Topic": "Téma", 
-        };
-  
+ 
   function updateBadge()
   {
     if (false == isLoggedIn) {
@@ -107,8 +83,8 @@
     xhr.send();  
   }
   
-  //setInterval(60*1000, requestItemData);
-  //setInterval(300*1000, requestMessageCount);
+  setInterval(requestItemData, 60000);
+  setInterval(requestMessageCount, 300000);
 
   requestItemData();
   requestMessageCount();

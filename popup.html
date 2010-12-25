@@ -1,5 +1,74 @@
 <html>
 <body>
-asdasd
+
+<a href="javascript:chrome.tabs.create({url: 'http://moly.hu/friss'})">a Friss megnyitása</a><br />
+
+<table id="table">
+</table>
+
+<script type="text/javascript">
+
+var table = document.getElementById("table");
+
+var itemTypes = { 
+        "Advertisement": "Ajánló",
+        "BadgeOwnership": "Kitüntetés",
+        "Book": "Könyv", 
+        "Citation": "Idézet", 
+        "Comment": "Molyos blogbejegyzéshez hozzászólás",
+        "Cover": "Borító", 
+        "Description": "Fülszöveg",
+        "Entry": "Blog", 
+        "Event": "Esemény",
+        "Follow": "Figyelés",
+        "Lend": "Kölcsönkérés",
+        "Link": "Link",
+        "LoveLetter": "Szerelmeslevél",
+        "Post": "Molyos blogbejegyzés",
+        "Recommendation": "Ajánlás",
+        "Reading": "Olvasás", 
+        "Report": "Hír",
+        "Share": "Megosztás",
+        "Sight": "Észlelés",
+        "Statement": "Karc", 
+        "Tale": "Polc", 
+        "Topic": "Téma", 
+      };
+      
+var unreadItemData = chrome.extension.getBackgroundPage().unreadItemData;
+
+function maxker(items) {
+  var maxkey = null;
+  for (var key in items) {
+  if ((!maxkey && items[key] != -1) ||
+      (maxkey && items[maxkey] < items[key])) {
+    
+    maxkey = key;
+  }
+  }
+  return maxkey;
+}
+
+var key;
+
+while (key = maxker(unreadItemData)) {
+  var row = document.createElement("tr");
+  
+  var td1 = document.createElement("td");
+  td1.textContent = unreadItemData[key];
+  td1.style.width = "15px";
+  row.appendChild(td1);
+  
+  var td2 = document.createElement("td");
+  td2.textContent = itemTypes[key];
+  row.appendChild(td2);
+  
+  table.appendChild(row);
+
+  unreadItemData[key] = -1;
+}
+
+</script>
+
 </body>
 </html>
