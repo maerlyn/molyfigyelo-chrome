@@ -14,28 +14,28 @@
   var urlMessages = "http://moly.hu/api/wave_notes_counter_for_current_user";
   
   var itemTypes = { 
-          "Advertisement": "AjÃ¡nlÃ³",
-          "BadgeOwnership": "KitÃ¼ntetÃ©s",
-          "Book": "KÃ¶nyv", 
-          "Citation": "IdÃ©zet", 
-          "Comment": "Molyos blogbejegyzÃ©shez hozzÃ¡szÃ³lÃ¡s",
-          "Cover": "BorÃ­tÃ³", 
-          "Description": "FÃ¼lszÃ¶veg",
+          "Advertisement": "Ajánló",
+          "BadgeOwnership": "Kitüntetés",
+          "Book": "Könyv", 
+          "Citation": "Idézet", 
+          "Comment": "Molyos blogbejegyzéshez hozzászólás",
+          "Cover": "Borító", 
+          "Description": "Fülszöveg",
           "Entry": "Blog", 
-          "Event": "EsemÃ©ny",
-          "Follow": "FigyelÃ©s",
-          "Lend": "KÃ¶lcsÃ¶nkÃ©rÃ©s",
+          "Event": "Esemény",
+          "Follow": "Figyelés",
+          "Lend": "Kölcsönkérés",
           "Link": "Link",
-          "LoveLetter": "SzerelmeslevÃ©l",
-          "Post": "Molyos blogbejegyzÃ©s",
-          "Recommendation": "AjÃ¡nlÃ¡s",
-          "Reading": "OlvasÃ¡s", 
-          "Report": "HÃ­r",
-          "Share": "MegosztÃ¡s",
-          "Sight": "Ã‰szlelÃ©s",
+          "LoveLetter": "Szerelmeslevél",
+          "Post": "Molyos blogbejegyzés",
+          "Recommendation": "Ajánlás",
+          "Reading": "Olvasás", 
+          "Report": "Hír",
+          "Share": "Megosztás",
+          "Sight": "Észlelés",
           "Statement": "Karc", 
           "Tale": "Polc", 
-          "Topic": "TÃ©ma", 
+          "Topic": "Téma", 
         };
   
   function updateBadge()
@@ -54,7 +54,7 @@
     
     if (0 == unreadItemCount) {
       if (0 != unreadMessageCount) {
-        chrome.browserAction.setBadgeText({text: "Ã¼zi"});
+        chrome.browserAction.setBadgeText({text: "üzi"});
       } else {
         chrome.browserAction.setBadgeText({text: ""});
       }
@@ -111,7 +111,7 @@
   //setInterval(300*1000, requestMessageCount);
 
   requestItemData();
-  //requestMessageCount();
+  requestMessageCount();
 
 </script>
 </head>
