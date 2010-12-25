@@ -13,6 +13,11 @@
   "permissions": [
     "tabs",
     "http://moly.hu/*"
-  ]
+  ],
+  
+  "icons": {
+    "16":   "favicon.ico",
+    "128":  "icon_128.png"
+  }
 }
 
