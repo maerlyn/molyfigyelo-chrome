@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<a href="javascript:chrome.tabs.create({url: 'http://moly.hu/friss'})">a Friss megnyitása</a><br />
+<a href="javascript:chrome.tabs.create({url: 'http://moly.hu/friss'})" title="kattints ide a friss megnyitásához">Friss</a><br />
 
 <table id="table">
 </table>
@@ -57,6 +57,8 @@ while (key = maxker(unreadItemData)) {
   var td1 = document.createElement("td");
   td1.textContent = unreadItemData[key];
   td1.style.width = "15px";
+  td1.style["font-weight"] = "bold";
+  td1.style["text-align"] = "right";
   row.appendChild(td1);
   
   var td2 = document.createElement("td");
