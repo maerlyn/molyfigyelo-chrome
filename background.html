@@ -75,6 +75,13 @@
         
         isLoggedIn = true;
         unreadItemData = JSON.parse(xhr.responseText);
+        
+        unreadItemCount = 0;
+        for(var i in unreadItemData) {
+          unreadItemCount += unreadItemData[i];
+        }
+        
+        updateBadge();
       }
     };
     xhr.open("GET", urlItems, true);
@@ -103,7 +110,8 @@
   //setInterval(60*1000, requestItemData);
   //setInterval(300*1000, requestMessageCount);
 
-  requestMessageCount();
+  requestItemData();
+  //requestMessageCount();
 
 </script>
 </head>
