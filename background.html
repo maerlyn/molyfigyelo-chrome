@@ -13,13 +13,12 @@
   var urlItems = "http://moly.hu/api/fresh_counter_by_type_for_current_user";
   var urlMessages = "http://moly.hu/api/wave_notes_counter_for_current_user";
   
- 
   function updateBadge()
   {
     if (false == isLoggedIn) {
       chrome.browserAction.setBadgeBackgroundColor(colorNormal);
       chrome.browserAction.setBadgeText({text:"---"});
-      break;
+      return;
     }
   
     if (0 == unreadMessageCount) {
@@ -46,7 +45,7 @@
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (xhr.responseText.substring(0, 4) == "null") {
           isLoggedIn = false;
-          break;
+          return;
         }
         
         isLoggedIn = true;
@@ -82,7 +81,7 @@
     xhr.open("GET", urlMessages, true);
     xhr.send();  
   }
-  
+
   setInterval(requestItemData, 60000);
   setInterval(requestMessageCount, 300000);
 
